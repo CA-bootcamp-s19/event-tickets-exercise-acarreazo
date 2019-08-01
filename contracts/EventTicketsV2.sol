@@ -134,7 +134,7 @@ contract EventTicketsV2 {
             - emit the appropriate event
     */
     
-    function getRefund(uint eventId) public {
+    function getRefund(uint eventId) public payable {
         uint ticketsPurchased = events[eventId].buyers[msg.sender];
         require(ticketsPurchased > 0, "You have not purchased tickets.");
         events[eventId].buyers[msg.sender] = 0;
