@@ -12,7 +12,7 @@ contract EventTickets {
         Use the appropriate keyword to allow ether transfers.
      */
     uint   TICKET_PRICE = 100 wei;
-    address payable owner;
+    aaddress public owner;
 
     /*
         Create a struct called "Event".
