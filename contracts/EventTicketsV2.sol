@@ -10,6 +10,7 @@ contract EventTicketsV2 {
     */
     uint   PRICE_TICKET = 100 wei;
     address public owner;
+  
     /*
         Create a variable to keep track of the event ID numbers.
     */
@@ -42,6 +43,7 @@ contract EventTicketsV2 {
     event LogGetRefund(address accountRefunded, uint eventId, uint numTickets);
     event LogEndSale(address owner, uint balance, uint eventId);
 
+  
     /*
         Create a modifier that throws an error if the msg.sender is not the owner.
     */
@@ -50,6 +52,10 @@ contract EventTicketsV2 {
         _;
     }
 
+
+    constructor() public {
+        owner = msg.sender;
+    }
     /*
         Define a function called addEvent().
         This function takes 3 parameters, an event description, a URL, and a number of tickets.
